@@ -23,7 +23,7 @@
       - bzip2
       - kernel-headers
       - kernel-devel
-      - "kernel-devel-{{ kernel_release.stdout }}"
+      # - "kernel-devel-{{ kernel_release.stdout }}"
       - "{{ packer_rhel_libselinux_package }}"
       - elfutils-libelf-devel
       - cifs-utils
