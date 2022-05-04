@@ -4,6 +4,9 @@
   changed_when: false
   register: kernel_release
 
+- debug:
+    msg: "{{ kernel_release.stdout }}"
+
 - name: set the appropriate libselinux package for RHEL 8.
   ansible.builtin.set_fact:
     packer_rhel_libselinux_package: python3-libselinux
