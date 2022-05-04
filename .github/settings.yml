@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: RedHat/CentOS configuration for Packer.
+  homepage: https://buluma.github.io/
+  topics: cloud, system, packaging, development, packer, rhel, centos, fedora, redhat, el, ansible, molecule, tox, playbook, hacktoberfest

@@ -1,74 +1,92 @@
-# Ansible Role: Packer RHEL/CentOS Configuration for Vagrant VirtualBox
+# [packer_rhel](#packer_rhel)
 
-[![CI](https://github.com/geerlingguy/ansible-role-packer_rhel/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-packer_rhel/actions?query=workflow%3ACI)
+RedHat/CentOS configuration for Packer.
 
-This role configures RHEL/CentOS (either minimal or full install) in preparation for it to be packaged as part of a .box file for Vagrant/VirtualBox deployment using [Packer](http://www.packer.io/).
+|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|---------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-packer_rhel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-packer_rhel/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-packer_rhel)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/packer_rhel)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/packer_rhel)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
 
-The role may be made more flexible in the future, so it could work with other Linux flavors and/or other Packer builders besides VirtualBox, but I'm currently only focused on VirtualBox, since the main use case right now is developer VMs.
+## [Example Playbook](#example-playbook)
 
-## Requirements
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+```yaml
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
 
-Prior to running this role via Packer, you need to make sure Ansible is installed via a shell provisioner, and that preliminary VM configuration (like adding a vagrant user to the appropriate group and the sudoers file) is complete, generally by using a Kickstart installation file (e.g. `ks.cfg`) with Packer. An example array of provisioners for your Packer .json template would be something like:
+  roles:
+    - role: buluma.packer_rhel
+```
 
-    "provisioners": [
-      {
-        "type": "shell",
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-        "script": "scripts/ansible.sh"
-      },
-      {
-        "type": "ansible-local",
-        "playbook_file": "ansible/main.yml",
-        "role_paths": [
-          "/Users/jgeerling/Dropbox/VMs/roles/geerlingguy.packer_rhel",
-        ]
-      }
-    ],
+The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
 
-The files should contain, at a minimum:
+  roles:
+    - role: buluma.bootstrap
+```
 
-**scripts/ansible.sh**:
 
-    #!/bin/bash -eux
-    # Add the EPEL repository, and install Ansible.
-    rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-    yum -y install ansible python-setuptools
+## [Role Variables](#role-variables)
 
-**ansible/main.yml**:
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+packer_rhel_libselinux_package: libselinux-python
+```
 
-    ---
-    - hosts: all
-      sudo: yes
-      gather_facts: yes
-      roles:
-        - geerlingguy.packer_rhel
+## [Requirements](#requirements)
 
-You might also want to add another shell provisioner to run cleanup, erasing free space using `dd`, but this is not required (it will just save a little disk space in the Packer-produced .box file).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-packer_rhel/blob/main/requirements.txt).
 
-If you'd like to add additional roles, make sure you add them to the `role_paths` array in the template .json file, and then you can include them in `main.yml` as you normally would. The Ansible configuration will be run over a local connection from within the Linux environment, so all relevant files need to be copied over to the VM; configuratin for this is in the template .json file. Read more: [Ansible Local Provisioner](http://www.packer.io/docs/provisioners/ansible-local.html).
+## [Status of used roles](#status-of-requirements)
 
-## Role Variables
+The following roles are used to prepare a system. You can prepare your system in another way.
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
 
-    packer_rhel_libselinux_package: libselinux-python
+## [Context](#context)
 
-The libselinux python package to be installed. This is overridden for RHEL 8 to be `python3-libselinux`.
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
-## Dependencies
+Here is an overview of related roles:
 
-None.
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-packer_rhel/png/requirements.png "Dependencies")
 
-## Example Playbook
+## [Compatibility](#compatibility)
 
-    - hosts: all
-      roles:
-        - { role: geerlingguy.packer_rhel }
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
-## License
+|container|tags|
+|---------|----|
+|el|all|
 
-MIT / BSD
+The minimum version of Ansible required is 2.12, tests have been done to:
 
-## Author Information
+- The previous version.
+- The current version.
+- The development version.
 
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-packer_rhel/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-packer_rhel/blob/master/CHANGELOG.md)
+
+## [License](#license)
+
+license (Apache-2.0)
+
+## [Author Information](#author-information)
+
+[Michael Buluma](https://buluma.github.io/)
