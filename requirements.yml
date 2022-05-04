@@ -2,7 +2,7 @@
 roles:
   - name: buluma.bootstrap
   - name: buluma.hostname
-  - name: buluma.openssh
+  - name: buluma.common
 collections:
   - name: community.general
   - name: ansible.posix
