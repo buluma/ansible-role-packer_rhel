@@ -54,6 +54,11 @@
     - regexp: '^GSSAPIAuthentication'
       line: 'GSSAPIAuthentication no'
 
+- name: Ensure group "vagrant" exists
+  ansible.builtin.group:
+    name: vagrant
+    state: present
+
 # Create Vagrant users
 - name: Add the user 'vagrant' and a primary group of 'vagrant'
   ansible.builtin.user:
