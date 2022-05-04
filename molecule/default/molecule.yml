@@ -32,5 +32,19 @@ provisioner:
       callback_whitelist: profile_tasks
     ssh_connection:
       pipelining: true
+scenario:
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
 verifier:
   name: ansible

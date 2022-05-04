@@ -4,7 +4,7 @@ RedHat/CentOS configuration for Packer.
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-packer_rhel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-packer_rhel/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-packer_rhel)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/packer_rhel)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/packer_rhel)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
+|[![github](https://github.com/buluma/ansible-role-packer_rhel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-packer_rhel/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-packer_rhel)|[![quality](https://img.shields.io/ansible/quality/59075)](https://galaxy.ansible.com/buluma/packer_rhel)|[![downloads](https://img.shields.io/ansible/role/d/59075)](https://galaxy.ansible.com/buluma/packer_rhel)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -30,6 +30,8 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 
   roles:
     - role: buluma.bootstrap
+    - role: buluma.hostname
+    - role: buluma.openssh
 ```
 
 
@@ -51,7 +53,9 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.hostname](https://galaxy.ansible.com/buluma/hostname)|[![Build Status GitHub](https://github.com/buluma/ansible-role-hostname/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-hostname/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-hostname/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-hostname)|
+|[buluma.openssh](https://galaxy.ansible.com/buluma/openssh)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssh/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-openssh/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-openssh)|
 
 ## [Context](#context)
 
@@ -67,7 +71,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|el|all|
+|el|8|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 

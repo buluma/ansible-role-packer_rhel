@@ -17,8 +17,6 @@ molecule:
   parallel:
     matrix:
       - image: "enterpriselinux"
-        tag: "7"
-      - image: "enterpriselinux"
         tag: "latest"
       - image: "docker-rockylinux8-ansible"
         tag: "latest"
@@ -26,8 +24,6 @@ molecule:
         tag: "latest"
       - image: "rockylinux"
         tag: "8"
-      - image: "docker-centos7-ansible"
-        tag: "latest"
       - image: "docker-centos8-ansible"
         tag: "latest"
       - image: "centos"
@@ -37,14 +33,12 @@ testing:
   stage: test
   needs: []
   script:
-    - image=${image} tag=${tag} molecule test
+    - image=${image} tag=${tag} molecule -v test
   rules:
     - if: $CI_COMMIT_REF_NAME == "testing"
   retry: 1
   parallel:
     matrix:
-      - image: "enterpriselinux"
-        tag: "7"
       - image: "enterpriselinux"
         tag: "latest"
 
