@@ -54,6 +54,12 @@
     - regexp: '^GSSAPIAuthentication'
       line: 'GSSAPIAuthentication no'
 
+# Create Vagrant users
+- name: Add the user 'vagrant' and a primary group of 'vagrant'
+  ansible.builtin.user:
+    name: vagrant
+    group: vagrant
+
 # Vagrant SSH configuration.
 - name: configure vagrant .ssh directory.
   ansible.builtin.file:
