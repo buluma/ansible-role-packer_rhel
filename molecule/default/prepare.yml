@@ -7,3 +7,4 @@
   roles:
     - role: buluma.bootstrap
     - role: buluma.hostname
+    - role: buluma.openssh

@@ -30,12 +30,12 @@
     state: present
 
 # Fix slow DNS.
-# - name: fix slow DNS (adapted from Bento).
-#   ansible.builtin.lineinfile:
-#     dest: /etc/sysconfig/network
-#     regexp: '^RES_OPTIONS'
-#     line: 'RES_OPTIONS="single-request-reopen"'
-#     state: present
+- name: fix slow DNS (adapted from Bento).
+  ansible.builtin.lineinfile:
+    dest: /etc/sysconfig/network
+    regexp: '^RES_OPTIONS'
+    line: 'RES_OPTIONS="single-request-reopen"'
+    state: present
 
 - name: restart network service (RHEL < 8).
   ansible.builtin.service: name=network state=restarted
