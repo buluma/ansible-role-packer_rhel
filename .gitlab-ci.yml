@@ -20,6 +20,18 @@ molecule:
         tag: "7"
       - image: "enterpriselinux"
         tag: "latest"
+      - image: "docker-rockylinux8-ansible"
+        tag: "latest"
+      - image: "rockylinux8"
+        tag: "latest"
+      - image: "rockylinux"
+        tag: "8"
+      - image: "docker-centos7-ansible"
+        tag: "latest"
+      - image: "docker-centos8-ansible"
+        tag: "latest"
+      - image: "centos"
+        tag: "centos8"
 
 testing:
   stage: test
