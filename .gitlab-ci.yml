@@ -37,7 +37,7 @@ testing:
   stage: test
   needs: []
   script:
-    - image=${image} tag=${tag} molecule -vvv test
+    - image=${image} tag=${tag} molecule -v test
   rules:
     - if: $CI_COMMIT_REF_NAME == "testing"
   retry: 1
