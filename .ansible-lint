@@ -9,8 +9,5 @@ exclude_paths:
   - ./molecule/default/collections.yml
   - ./.tox
   - ./.cache
-
-skip_list:
-  - risky-shell-pipe  # Shells that use pipes should set the pipefail option.
-  - fqcn-builtins  # Use FQCN for builtin actions.
-  - unnamed-task  # All tasks should be named.
+  - ./.github
+  - ./requirements.yml

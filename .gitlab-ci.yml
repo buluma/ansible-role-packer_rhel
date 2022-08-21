@@ -1,5 +1,5 @@
 ---
-image: "buluma/github-action-molecule:4.0.7"
+image: "buluma/github-action-molecule:4.0.9"
 
 services:
   - docker:dind
@@ -12,69 +12,28 @@ molecule:
   stage: build
   allow_failure: true
   script:
-    - image=${image} tag=${tag} molecule test
-  retry: 1
-  parallel:
-    matrix:
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "docker-rockylinux8-ansible"
-        tag: "latest"
-      - image: "rockylinux8"
-        tag: "latest"
-      - image: "rockylinux"
-        tag: "8"
-      - image: "docker-centos8-ansible"
-        tag: "latest"
-      - image: "centos"
-        tag: "centos8"
-
-testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} molecule -v test
+    - if [ -f tox.ini ] ; then tox ; fi
+    - if [ ! -f tox.ini ] ; then molecule test ; fi
   rules:
-    - if: $CI_COMMIT_REF_NAME == "testing"
-  retry: 1
-  parallel:
-    matrix:
-      - image: "enterpriselinux"
-        tag: "latest"
-
-galaxy:
-  stage: deploy
-  needs: []
-  script:
-    - ansible-galaxy role info buluma.packer_rhel
-
-role_testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.packer_rhel
+    - if: $CI_COMMIT_REF_NAME == "master"
   retry: 1
   parallel:
     matrix:
       - image: "enterpriselinux"
         tag: "7"
       - image: "enterpriselinux"
-        tag: "latest"
+        tag: "8"
 
-release_job:
-  stage: .post
-  needs: [molecule]
-  image: registry.gitlab.com/gitlab-org/release-cli:latest
-  rules:
-    - if: $CI_COMMIT_TAG
+testing:
+  stage: test
+  needs: []
   script:
-    - echo "Running the release job."
-  release:
-    tag_name: $CI_COMMIT_TAG
-    name: 'Release $CI_COMMIT_TAG'
-    description: 'Release created using the release-cli.'
-  artifacts:
-    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
-    paths:
-      - /
-    expire_in: 1 day
+    - if [ -f tox.ini ] ; then tox ; fi
+    - if [ ! -f tox.ini ] ; then molecule test ; fi
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "testing"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "enterpriselinux"
+        tag: "8"
