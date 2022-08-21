@@ -11,3 +11,8 @@ exclude_paths:
   - ./.cache
   - ./.github
   - ./requirements.yml
+
+skip_list:
+  - fqcn-builtins
+  - unnamed-task
+  - risky-shell-pipe
