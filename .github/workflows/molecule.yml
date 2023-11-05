@@ -29,9 +29,19 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
+<<<<<<< HEAD
         uses: actions/checkout@v4
       - name: ansible-lint
         uses: ansible-community/ansible-lint-action@main
+=======
+        uses: actions/checkout@v3
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: buluma/molecule-action@v4.0.7
+        with:
+          command: lint
+>>>>>>> 266ab3a7c1f2c1674ae43e752574f7f5dc7e3a57
   test:
     needs:
       - lint
@@ -54,7 +64,11 @@ jobs:
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
+<<<<<<< HEAD
         uses: buluma/molecule-action@v5.0.9
+=======
+        uses: buluma/molecule-action@v4.0.7
+>>>>>>> 266ab3a7c1f2c1674ae43e752574f7f5dc7e3a57
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
