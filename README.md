@@ -1,4 +1,4 @@
-# [packer_rhel](#packer_rhel)
+# [Ansible role packer_rhel](#packer_rhel)
 
 RedHat/CentOS configuration for Packer.
 
