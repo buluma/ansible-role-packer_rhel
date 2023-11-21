@@ -1,0 +1,13 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "packer_rhel" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.hostname" [fillcolor=green style=filled]
+    "buluma.openssh" [fillcolor=green style=filled]
+  }
+  "packer_rhel" -> "buluma.bootstrap"
+  "packer_rhel" -> "buluma.hostname"
+  "packer_rhel" -> "buluma.openssh"
+}
