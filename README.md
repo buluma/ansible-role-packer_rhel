@@ -2,9 +2,9 @@
 
 RedHat/CentOS configuration for Packer.
 
-|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-packer_rhel/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-packer_rhel)|[![downloads](https://img.shields.io/ansible/role/d/4793)](https://galaxy.ansible.com/buluma/packer_rhel)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
+|GitHub|Version|Issues|Pull Requests|
+|------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -55,11 +55,11 @@ packer_rhel_libselinux_package: libselinux-python
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
+| Requirement | GitHub | Version |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.hostname](https://galaxy.ansible.com/buluma/hostname)|[![Build Status GitHub](https://github.com/buluma/ansible-role-hostname/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-hostname/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-hostname/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-hostname)|
-|[buluma.openssh](https://galaxy.ansible.com/buluma/openssh)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssh/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-openssh/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openssh)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.hostname](https://galaxy.ansible.com/buluma/hostname)|[![Build Status GitHub](https://github.com/buluma/ansible-role-hostname/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-hostname/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-hostname.svg)](https://github.com/shadowwalker/ansible-role-hostname)|
+|[buluma.openssh](https://galaxy.ansible.com/buluma/openssh)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssh/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssh.svg)](https://github.com/shadowwalker/ansible-role-openssh)|
 
 ## [Context](#context)
 
@@ -97,7 +97,6 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 [Michael Buluma](https://buluma.github.io/)
 
-Please consider [sponsoring me](https://github.com/sponsors/buluma).
 
 ### [Special Thanks](#special-thanks)
 
