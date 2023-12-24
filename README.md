@@ -1,10 +1,10 @@
-# [Ansible role packer_rhel](#packer_rhel)
+# Ansible role [packer_rhel](https://galaxy.ansible.com/ui/standalone/roles/buluma/packer_rhel/documentation)
 
 RedHat/CentOS configuration for Packer.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-packer_rhel/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-packer_rhel.svg)](https://github.com/buluma/ansible-role-packer_rhel/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/packer_rhel)](https://galaxy.ansible.com/ui/standalone/roles/buluma/packer_rhel/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -91,13 +91,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[license (Apache-2.0)](https://github.com/buluma/ansible-role-packer_rhel/blob/master/LICENSE).
+[license (Apache-2.0)](https://github.com/buluma/ansible-role-packer_rhel/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
