@@ -57,9 +57,9 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | Version |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.hostname](https://galaxy.ansible.com/buluma/hostname)|[![Build Status GitHub](https://github.com/buluma/ansible-role-hostname/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-hostname/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-hostname.svg)](https://github.com/shadowwalker/ansible-role-hostname)|
-|[buluma.openssh](https://galaxy.ansible.com/buluma/openssh)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssh/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssh/actions)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssh.svg)](https://github.com/shadowwalker/ansible-role-openssh)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Ansible Molecule](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.hostname](https://galaxy.ansible.com/buluma/hostname)|[![Ansible Molecule](https://github.com/buluma/ansible-role-hostname/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-hostname/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-hostname.svg)](https://github.com/shadowwalker/ansible-role-hostname)|
+|[buluma.openssh](https://galaxy.ansible.com/buluma/openssh)|[![Ansible Molecule](https://github.com/buluma/ansible-role-openssh/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-openssh/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssh.svg)](https://github.com/shadowwalker/ansible-role-openssh)|
 
 ## [Context](#context)
 
