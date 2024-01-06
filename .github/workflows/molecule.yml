@@ -25,7 +25,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: buluma/molecule-action@v4.0.7
+        uses: buluma/molecule-action@v4.0.8
         with:
           command: lint
   test:
