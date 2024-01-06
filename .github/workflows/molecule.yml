@@ -27,7 +27,7 @@ jobs:
       - name: molecule
         uses: buluma/molecule-action@v4.0.8
         with:
-          command: lint
+          command: lint -vvv
   test:
     needs:
       - lint
